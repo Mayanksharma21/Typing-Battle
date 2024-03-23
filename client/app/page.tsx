@@ -18,7 +18,7 @@ export default function Home() {
 
     const inviteCode = formData.get("inviteCode") as string;
 
-    if (!inviteCode) return toast.error("Invalid Code is required");
+    if (!inviteCode) return toast.error("Invitation Code is required");
 
     router.push(`/game/${inviteCode}`);
   }

@@ -5,8 +5,6 @@ export const rooms = new Map<string, GameClass>();
 
 export function setupListeners(io: Server) {
   io.on("connection", (socket) => {
-    console.log(`New Connection with ID:- ${socket.id}`);
-
     socket.on("join-game", (roomId: string, name: string) => {
       if (!roomId) return socket.emit("error", "Invalid Room Id");
       if (!name) return socket.emit("error", "Please provide a nickname");
